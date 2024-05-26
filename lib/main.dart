@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro_timer/ui/action_buttons/action_buttons.dart';
+import 'package:pomodoro_timer/ui/action_buttons/button.dart';
 import 'package:pomodoro_timer/ui/timer/view/cycle.dart';
 import 'package:pomodoro_timer/ui/timer/view/timer.dart';
 import 'package:pomodoro_timer/ui/timer/view/timer_container.dart';
@@ -39,7 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Center(child: TimerContainer())
+      body: const Column(
+        children: [
+          Center(child: TimerContainer()),
+          SizedBox(height: 24,),
+          ActionButtons()
+        ],
+      )
     );
   }
 }
